@@ -38,10 +38,19 @@ body {
 	border-radius: 7px;
 	font-size: 18px;
 	transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .button:hover {
 	background-color: #510087;
 	color: #fdc500;
 	transform: scale(1.1);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#footer {
+	text-align: center;
+    margin-top: 250px;
+    font-size: 0.6em;
+	color: white;
 }
