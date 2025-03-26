@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+:root {
+	--roxo-escuro: #3D0066;
+	--roxo-medio: #510087;
+	--roxo-claro: #5C0099;
+	--amarelo-escuro: #FDC500;
+	--amarelo: #FFD500;
+	}
+
 * {
 	margin: 0;
 	padding: 0;
 	font-family: 'Josefin Sans', sans-serif;
 	font-weight: bold;
 }
-body {
-	background-color: #3d0066;
+#bodyHome {
+	background-color: var(--roxo-escuro);
 }
 
 #content {
@@ -31,10 +39,10 @@ body {
 }
 
 .button {
-	background-color: #5c0099;
+	background-color: var(--roxo-claro);
 	border: none;
 	padding: 10px 30px;
-	color: #ffd500;
+	color: var(--amarelo);
 	border-radius: 7px;
 	font-size: 18px;
 	transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -42,8 +50,8 @@ body {
 }
 
 .button:hover {
-	background-color: #510087;
-	color: #fdc500;
+	background-color: var(--roxo-medio);
+	color: var(--amarelo-escuro);
 	transform: scale(1.1);
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -53,4 +61,116 @@ body {
     margin-top: 250px;
     font-size: 0.6em;
 	color: white;
+}
+
+/* Output pages */
+
+.bodyoutput {
+	background-color: white;
+}
+
+.headerOutput {
+	display: flex;
+	background-color: var(--roxo-medio);
+	place-items: center;
+	gap: 400px;
+}
+
+#headerOutputHex {
+	display: flex;
+	background-color: var(--roxo-medio);
+	place-items: center;
+	gap: 350px;
+}
+
+.title-left {
+	color: var(--amarelo);
+	margin-left: 30px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+.title-center {
+	color: white;
+	margin-left: 0px;
+}
+
+#title-center-hex {
+	margin-left: 20px;
+}
+
+#btnHome {
+	margin-left: 200px;
+}
+
+#btnHomeOctal, #btnHomeHex {
+	margin-left: 230px;
+}
+
+#btnHomeHex {
+	margin-left: 230px;
+}
+
+.inputContainer {
+	display: grid;
+	place-items: center;
+	margin-top: 40px;
+}
+
+.textInputContainer {
+	color: var(--amarelo);
+}
+
+.inputNumber {
+	background-color: var(--roxo-medio);
+	border: none;
+	padding: 10px 50px ;
+	margin-top: 10px;
+	color: white;
+	text-align: center;
+	font-size: 15px;
+	border-radius: 10px;
+}
+
+.inputNumber::placeholder {
+	font-style: italic;
+}
+
+#btnConverter {
+	margin-top: 20px;
+	font-size: 13px;
+}
+
+.outputs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 70px;
+	gap: 100px;
+}
+
+.divOutputs {
+	background-color: var(--amarelo);
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 200px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.divOutputs h3 {
+	color: white;
+	font-size: 30px;
+	margin-top: 20px;
+}
+
+.divOutputs .txtResultado {
+	color: white;
+	margin-top: 30px;
+}
+
+.divOutputs .outputResultado {
+	color: var(--roxo-medio);
+	margin-top: 10px;
 }
