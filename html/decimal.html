@@ -4,11 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Conversor de bases 3000</title>
-        <script src="../js/main.js"></script>
+		<script src="../js/main.js"></script>
 		<link rel="stylesheet" href="../css/style.css" />
 	</head>
 	<body class="bodyOutput">
-        <header class="headerOutput">
+		<header class="headerOutput">
 			<div class="title-left"><h2>Conversor de bases 3000</h2></div>
 			<div class="title-center"><h2>Decimal</h2></div>
 			<a href="index.html"><button class="button" id="btnHome">Início</button></a>
@@ -16,9 +16,9 @@
 		<div class="container">
 			<div class="inputContainer">
 				<p class="textInputContainer">Digite o número para conversão</p>
-				<input type="text" class="inputNumber" id="iptDecimalNumber" placeholder="Digite o número aqui">
+				<input type="text" class="inputNumber" id="iptDecimalNumber" placeholder="Digite o número aqui" />
 				<div id="resultado"></div>
-				<button onclick="converter('decimal')"  class="button" id="btnConverter">Converter</button>
+				<button onclick="converter('decimal')" class="button" id="btnConverter">Converter</button>
 			</div>
 			<div class="outputs">
 				<div class="divOutputs">
@@ -37,6 +37,32 @@
 					<p class="outputResultado">0000</p>
 				</div>
 			</div>
+
+			<div class="containerCalculo">
+				<div class="containerButtonCalculo">
+					<button class="button">Operações aritméticas</button>
+				</div>
+				<h3 class="title-operacoes">Operações com decimais</h3>
+				<div class="containerTextsInputs">
+					<p class="textsInputs" class="textInput1">Número 1</p>
+					<p class="textsInputs" class="textInput2">Número 2</p>
+				</div>
+				<div class="containerInputsOperacoes">
+					<input type="number" class="inputCalc" class="inputCalcNum1" />
+					<input type="number" class="inputCalc" class="inputCalcNum2" />
+				</div>
+				<div class="container-calc-button">
+					<button class="btnSoma">Soma</button>
+					<button class="btnSubtracao">Subtracao</button>
+					<button class="btnMultiplicacao">Multiplicação</button>
+					<button class="btnDivisao">Divisão</button>
+				</div>
+
+				<div class="containerResultado">
+					<p>Resultado:</p>
+					<span class="spanResultado">0000</span>
+				</div>
+			</div>
 		</div>
-    </body>
+	</body>
 </html>

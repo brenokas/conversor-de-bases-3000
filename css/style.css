@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
-	--roxo-escuro: #3D0066;
+	--roxo-escuro: #3d0066;
 	--roxo-medio: #510087;
-	--roxo-claro: #5C0099;
-	--amarelo-escuro: #FDC500;
-	--amarelo: #FFD500;
-	}
+	--roxo-claro: #5c0099;
+	--amarelo-escuro: #fdc500;
+	--amarelo: #ffd500;
+}
 
 * {
 	margin: 0;
@@ -38,7 +38,11 @@
 	gap: 100px;
 }
 
-.button {
+.button,
+.btnSoma,
+.btnSubtracao,
+.btnMultiplicacao,
+.btnDivisao {
 	background-color: var(--roxo-claro);
 	border: none;
 	padding: 10px 30px;
@@ -49,7 +53,11 @@
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.button:hover {
+.button:hover,
+.btnSoma:hover,
+.btnSubtracao:hover,
+.btnMultiplicacao:hover,
+.btnDivisao:hover {
 	background-color: var(--roxo-medio);
 	color: var(--amarelo-escuro);
 	transform: scale(1.1);
@@ -58,8 +66,8 @@
 
 #footer {
 	text-align: center;
-    margin-top: 250px;
-    font-size: 0.6em;
+	margin-top: 250px;
+	font-size: 0.6em;
 	color: white;
 }
 
@@ -103,7 +111,8 @@
 	margin-left: 200px;
 }
 
-#btnHomeOctal, #btnHomeHex {
+#btnHomeOctal,
+#btnHomeHex {
 	margin-left: 230px;
 }
 
@@ -121,10 +130,10 @@
 	color: var(--amarelo);
 }
 
-.inputNumber {
+.inputNumber, .inputCalc {
 	background-color: var(--roxo-medio);
 	border: none;
-	padding: 10px 50px ;
+	padding: 10px 50px;
 	margin-top: 10px;
 	color: white;
 	text-align: center;
@@ -157,6 +166,7 @@
 	height: 200px;
 	border-radius: 10px;
 	text-align: center;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .divOutputs h3 {
@@ -173,4 +183,63 @@
 .divOutputs .outputResultado {
 	color: var(--roxo-medio);
 	margin-top: 10px;
+}
+
+.containerCalculo {
+	margin-top: 90px;
+	margin-bottom: 30px;
+	display: grid;
+	place-items: center;
+}
+
+.container-calc-button {
+	margin-top: 20px;
+}
+
+.title-operacoes {
+	color: var(--roxo-medio);
+	font-size: 20px;
+}
+
+.btnSoma,
+.btnDivisao,
+.btnMultiplicacao,
+.btnSubtracao {
+	font-size: 13px;
+}
+
+.containerTextsInputs {
+	margin-top: 20px;
+	display: flex;
+	gap: 180px;
+}
+
+.textsInputs {
+	color: var(--amarelo);
+}
+
+.inputCalc {
+	border: none;
+	padding: 10px 10px;
+}
+
+.containerResultado {
+	display: flex;
+	margin-top: 20px;
+	gap: 100px;
+	background-color: var(--amarelo);
+	padding: 20px;
+	border-radius: 20px;
+}
+
+.containerResultado p {
+	color: var(--roxo-medio);
+}
+
+.containerResultado span {
+	color: var(--roxo-medio);
+}
+
+.containerButtonCalculo {
+	margin-bottom: 40px;
 }
