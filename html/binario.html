@@ -49,14 +49,14 @@
 					<p class="textsInputs" class="textInput2">Número 2</p>
 				</div>
 				<div class="containerInputsOperacoes">
-					<input type="number" class="inputCalc" class="inputCalcNum1" />
-					<input type="number" class="inputCalc" class="inputCalcNum2" />
+					<input id="num1" type="number" class="inputCalc" class="inputCalcNum1" />
+					<input id="num2" type="number" class="inputCalc" class="inputCalcNum2" />
 				</div>
 				<div class="container-calc-button">
-					<button class="btnSoma">Soma</button>
-					<button class="btnSubtracao">Subtracao</button>
-					<button class="btnMultiplicacao">Multiplicação</button>
-					<button class="btnDivisao">Divisão</button>
+					<button onclick="calcular2('soma')" class="btnSoma">Soma</button>
+					<button onclick="calcular2('subtracao')"class="btnSubtracao">Subtracao</button>
+					<button onclick="calcular2('multiplicacao')"class="btnMultiplicacao">Multiplicação</button>
+					<button onclick="calcular2('divisao')"class="btnDivisao">Divisão</button>
 				</div>
 
 				<div class="containerResultado">

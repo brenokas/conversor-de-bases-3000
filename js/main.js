@@ -114,3 +114,240 @@ function converter(baseSelecionada) {
         document.getElementById("resultado").innerHTML = `<p style='color: red;'>${error.message}</p>`;
     }
 }
+
+function calcular(operacao) {
+    let num1 = parseInt(document.getElementById("num1").value);
+    let num2 = parseInt(document.getElementById("num2").value);
+    let resultado;
+
+    if (isNaN(num1) || isNaN(num2)) {
+        document.querySelector(".spanResultado").textContent = "Erro: Insira números válidos";
+        return;
+    }
+
+    switch (operacao) {
+        case "soma":
+            resultado = num1 + num2;
+            break;
+        case "subtracao":
+            resultado = num1 - num2;
+            break;
+        case "multiplicacao":
+            resultado = num1 * num2;
+            break;
+        case "divisao":
+            if (num2 === 0) {
+                document.querySelector(".spanResultado").textContent = "Erro: Divisão por zero!";
+                return;
+            }
+            resultado = num1 / num2;
+            break;
+        default:
+            resultado = "Operação inválida";
+    }
+
+    if (typeof resultado === 'number' && !isNaN(resultado)) {
+        // Exibindo os resultados em diferentes bases
+        let binario = resultado.toString(2);
+        let hexa = resultado.toString(16).toUpperCase();
+        let octal = resultado.toString(8);
+        
+        // Atualizando o conteúdo da tela
+        document.querySelector(".spanResultado").textContent = `Resultado: ${resultado} (Decimal), ${binario} (Binário), ${hexa} (Hexadecimal), ${octal} (Octal)`;
+    } else {
+        document.querySelector(".spanResultado").textContent = resultado;
+    }
+}
+function calcular2(operacao) {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let resultado;
+    let valido = true;
+
+    // Verificando se os números são binários usando o código fornecido
+    for (let char of num1) {
+        if (char !== "0" && char !== "1") {
+            valido = false;
+            break;
+        }
+    }
+
+    for (let char of num2) {
+        if (char !== "0" && char !== "1") {
+            valido = false;
+            break;
+        }
+    }
+
+    // Se algum número não for binário, exibe erro
+    if (!valido) {
+        document.querySelector(".spanResultado").textContent = "Erro: Digite apenas números binários (0 ou 1)";
+        return;
+    }
+
+    // Convertendo os números binários para decimal
+    num1 = parseInt(num1, 2);
+    num2 = parseInt(num2, 2);
+
+    // Realizando a operação
+    switch (operacao) {
+        case "soma":
+            resultado = num1 + num2;
+            break;
+        case "subtracao":
+            resultado = num1 - num2;
+            break;
+        case "multiplicacao":
+            resultado = num1 * num2;
+            break;
+        case "divisao":
+            if (num2 === 0) {
+                document.querySelector(".spanResultado").textContent = "Erro: Divisão por zero!";
+                return;
+            }
+            resultado = num1 / num2;
+            break;
+        default:
+            resultado = "Operação inválida";
+    }
+
+    // Exibindo o resultado nas 4 bases
+    if (typeof resultado === 'number' && !isNaN(resultado)) {
+        let binario = resultado.toString(2);
+        let hexa = resultado.toString(16).toUpperCase();
+        let octal = resultado.toString(8);
+        
+        document.querySelector(".spanResultado").textContent = `Resultado: ${resultado} (Decimal), ${binario} (Binário), ${hexa} (Hexadecimal), ${octal} (Octal)`;
+    } else {
+        document.querySelector(".spanResultado").textContent = resultado;
+    }
+}
+
+function calcular3(operacao) {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let resultado;
+    let valido = true;
+
+    // Verificando se os números são hexadecimais
+    for (let char of num1) {
+        if (!("0123456789ABCDEF".includes(char.toUpperCase()))) {
+            valido = false;
+            break;
+        }
+    }
+
+    for (let char of num2) {
+        if (!("0123456789ABCDEF".includes(char.toUpperCase()))) {
+            valido = false;
+            break;
+        }
+    }
+
+    // Se algum número não for hexadecimal, exibe erro
+    if (!valido) {
+        document.querySelector(".spanResultado").textContent = "Erro: Digite apenas números hexadecimais (0-9, A-F)";
+        return;
+    }
+
+    // Convertendo os números hexadecimais para decimal
+    num1 = parseInt(num1, 16);
+    num2 = parseInt(num2, 16);
+
+    // Realizando a operação
+    switch (operacao) {
+        case "soma":
+            resultado = num1 + num2;
+            break;
+        case "subtracao":
+            resultado = num1 - num2;
+            break;
+        case "multiplicacao":
+            resultado = num1 * num2;
+            break;
+        case "divisao":
+            if (num2 === 0) {
+                document.querySelector(".spanResultado").textContent = "Erro: Divisão por zero!";
+                return;
+            }
+            resultado = num1 / num2;
+            break;
+        default:
+            resultado = "Operação inválida";
+    }
+
+    // Exibindo o resultado nas 4 bases
+    if (typeof resultado === 'number' && !isNaN(resultado)) {
+        let binario = resultado.toString(2);
+        let hexa = resultado.toString(16).toUpperCase();
+        let octal = resultado.toString(8);
+        
+        document.querySelector(".spanResultado").textContent = `Resultado: ${resultado} (Decimal), ${binario} (Binário), ${hexa} (Hexadecimal), ${octal} (Octal)`;
+    } else {
+        document.querySelector(".spanResultado").textContent = resultado;
+    }
+}
+function calcular4(operacao) {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let resultado;
+    let valido = true;
+
+    // Verificando se os números são octais
+    for (let char of num1) {
+        if (!("01234567".includes(char))) {
+            valido = false;
+            break;
+        }
+    }
+
+    for (let char of num2) {
+        if (!("01234567".includes(char))) {
+            valido = false;
+            break;
+        }
+    }
+
+    // Se algum número não for octal, exibe erro
+    if (!valido) {
+        document.querySelector(".spanResultado").textContent = "Erro: Digite apenas números octais (0-7)";
+        return;
+    }
+
+    // Convertendo os números octais para decimal
+    num1 = parseInt(num1, 8);
+    num2 = parseInt(num2, 8);
+
+    // Realizando a operação
+    switch (operacao) {
+        case "soma":
+            resultado = num1 + num2;
+            break;
+        case "subtracao":
+            resultado = num1 - num2;
+            break;
+        case "multiplicacao":
+            resultado = num1 * num2;
+            break;
+        case "divisao":
+            if (num2 === 0) {
+                document.querySelector(".spanResultado").textContent = "Erro: Divisão por zero!";
+                return;
+            }
+            resultado = num1 / num2;
+            break;
+        default:
+            resultado = "Operação inválida";
+    }
+
+    // Exibindo o resultado nas 4 bases
+    if (typeof resultado === 'number' && !isNaN(resultado)) {
+        let binario = resultado.toString(2);
+        let hexa = resultado.toString(16).toUpperCase();
+        let octal = resultado.toString(8);
+        
+        document.querySelector(".spanResultado").textContent = `Resultado: ${resultado} (Decimal), ${binario} (Binário), ${hexa} (Hexadecimal), ${octal} (Octal)`;
+    } else {
+        document.querySelector(".spanResultado").textContent = resultado;
+    }
+}
