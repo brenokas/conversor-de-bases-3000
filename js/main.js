@@ -22,25 +22,60 @@ function converter(baseSelecionada) {
     // Limpa qualquer mensagem de erro anterior
     document.getElementById("resultado").innerHTML = '';
 
-    // Verifica se o valor inserido é vazio ou não é um número válido
-    if (input === "" || isNaN(input)) {
-        document.getElementById("resultado").innerHTML = "<p style='color: red;'>Por favor, insira um número válido para a base selecionada!</p>";
-        return; // Sai da função se o número for inválido
+    // Converte input para maiúsculas 
+    input = input.toUpperCase();
+
+    // Validação para cada base
+    let valido = true;
+
+    if (input === "") {
+        valido = false;
+    } else if (baseSelecionada === "hexadecimal") {
+        for (let char of input) {
+            if (!("0123456789ABCDEF".includes(char))) {
+                valido = false;
+                break;
+            }
+        }
+    } else if (baseSelecionada === "binario") {
+        for (let char of input) {
+            if (char !== "0" && char !== "1") {
+                valido = false;
+                break;
+            }
+        }
+    } else if (baseSelecionada === "octal") {
+        for (let char of input) {
+            if (!("01234567".includes(char))) {
+                valido = false;
+                break;
+            }
+        }
+    } else if (isNaN(input)) {
+        valido = false;
     }
-    // Com base na baseSelecionada, converte o valor inserido para decimal.
+
+    // Se a validação falhar, exibe erro e interrompe a função
+    if (!valido) {
+        document.getElementById("resultado").innerHTML = "<p style='color: red;'>Por favor, insira um número válido para a base selecionada!</p>";
+        return;
+    }
+
+    // Converte o valor para decimal
     try {
+        let decimal;
         switch (baseSelecionada) {
             case "decimal":
-                decimal = parseInt(input, 10);  // Converte para decimal
+                decimal = parseInt(input, 10);
                 break;
             case "binario":
-                decimal = parseInt(input, 2);   // Converte de binário para decimal
+                decimal = parseInt(input, 2);
                 break;
             case "octal":
-                decimal = parseInt(input, 8);   // Converte de octal para decimal
+                decimal = parseInt(input, 8);
                 break;
             case "hexadecimal":
-                decimal = parseInt(input, 16);  // Converte de hexadecimal para decimal
+                decimal = parseInt(input, 16);
                 break;
             default:
                 throw new Error("Base inválida");
@@ -56,23 +91,23 @@ function converter(baseSelecionada) {
         var octal = decimal.toString(8);
         var hexadecimal = decimal.toString(16).toUpperCase();
 
-        // Exibe os resultados, convertendo para a base necessária
+        // Exibe os resultados corretamente
         if (baseSelecionada === "binario") {
-            document.querySelectorAll(".outputResultado")[0].textContent = octal;        // Decimal
-            document.querySelectorAll(".outputResultado")[1].textContent = hexadecimal;         // Octal
-            document.querySelectorAll(".outputResultado")[2].textContent = decimal;  // Hexadecimal
+            document.querySelectorAll(".outputResultado")[0].textContent = decimal;      // Decimal
+            document.querySelectorAll(".outputResultado")[1].textContent = octal;        // Octal
+            document.querySelectorAll(".outputResultado")[2].textContent = hexadecimal;  // Hexadecimal
         } else if (baseSelecionada === "octal") {
-            document.querySelectorAll(".outputResultado")[0].textContent = binario;      // Binário
-            document.querySelectorAll(".outputResultado")[1].textContent = decimal;      // Decimal
+            document.querySelectorAll(".outputResultado")[0].textContent = decimal;      // Decimal
+            document.querySelectorAll(".outputResultado")[1].textContent = binario;      // Binário
             document.querySelectorAll(".outputResultado")[2].textContent = hexadecimal;  // Hexadecimal
         } else if (baseSelecionada === "hexadecimal") {
+            document.querySelectorAll(".outputResultado")[0].textContent = decimal;      // Decimal
+            document.querySelectorAll(".outputResultado")[1].textContent = binario;      // Binário
+            document.querySelectorAll(".outputResultado")[2].textContent = octal;        // Octal
+        } else if (baseSelecionada === "decimal") {
             document.querySelectorAll(".outputResultado")[0].textContent = binario;      // Binário
             document.querySelectorAll(".outputResultado")[1].textContent = octal;        // Octal
-            document.querySelectorAll(".outputResultado")[2].textContent = decimal;      // Decimal
-        } else if (baseSelecionada === "decimal") {
-            document.querySelectorAll(".outputResultado")[0].textContent = octal;        // Octal
-            document.querySelectorAll(".outputResultado")[1].textContent = hexadecimal;  // Hexadecimal
-            document.querySelectorAll(".outputResultado")[2].textContent = binario;      // Binário
+            document.querySelectorAll(".outputResultado")[2].textContent = hexadecimal;  // Hexadecimal
         }
 
     } catch (error) {
