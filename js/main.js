@@ -93,21 +93,21 @@ function converter(baseSelecionada) {
 
         // Exibe os resultados corretamente
         if (baseSelecionada === "binario") {
-            document.querySelectorAll(".outputResultado")[0].textContent = decimal;      // Decimal
-            document.querySelectorAll(".outputResultado")[1].textContent = octal;        // Octal
-            document.querySelectorAll(".outputResultado")[2].textContent = hexadecimal;  // Hexadecimal
+            document.querySelectorAll(".outputResultado")[0].textContent = octal;      // Decimal
+            document.querySelectorAll(".outputResultado")[1].textContent = hexadecimal;        // Octal
+            document.querySelectorAll(".outputResultado")[2].textContent = decimal;  // Hexadecimal
         } else if (baseSelecionada === "octal") {
-            document.querySelectorAll(".outputResultado")[0].textContent = decimal;      // Decimal
-            document.querySelectorAll(".outputResultado")[1].textContent = binario;      // Binário
-            document.querySelectorAll(".outputResultado")[2].textContent = hexadecimal;  // Hexadecimal
+            document.querySelectorAll(".outputResultado")[0].textContent = binario;      // Binario
+            document.querySelectorAll(".outputResultado")[1].textContent = hexadecimal;      // Hexadecimal
+            document.querySelectorAll(".outputResultado")[2].textContent = decimal;  // Decimal
         } else if (baseSelecionada === "hexadecimal") {
-            document.querySelectorAll(".outputResultado")[0].textContent = decimal;      // Decimal
+            document.querySelectorAll(".outputResultado")[0].textContent = octal;      // Octal
             document.querySelectorAll(".outputResultado")[1].textContent = binario;      // Binário
-            document.querySelectorAll(".outputResultado")[2].textContent = octal;        // Octal
+            document.querySelectorAll(".outputResultado")[2].textContent = decimal;        // Hexadecimal
         } else if (baseSelecionada === "decimal") {
-            document.querySelectorAll(".outputResultado")[0].textContent = binario;      // Binário
-            document.querySelectorAll(".outputResultado")[1].textContent = octal;        // Octal
-            document.querySelectorAll(".outputResultado")[2].textContent = hexadecimal;  // Hexadecimal
+            document.querySelectorAll(".outputResultado")[0].textContent = octal;      // octal
+            document.querySelectorAll(".outputResultado")[1].textContent = hexadecimal;        // hexadecimal
+            document.querySelectorAll(".outputResultado")[2].textContent = binario;  // binario
         }
 
     } catch (error) {
