@@ -153,9 +153,9 @@ function calcular(operacao) {
         let octal = resultado.toString(8);
         
         // Atualizando o conteúdo da tela
-        document.querySelector(".spanResultado").textContent = `Resultado: ${resultado} (Decimal), ${binario} (Binário), ${hexa} (Hexadecimal), ${octal} (Octal)`;
+        document.querySelector(".spanResultado").innerHTML = `${resultado} (Decimal)<br> ${binario} (Binário)<br> ${hexa} (Hexadecimal)<br> ${octal} (Octal)`;
     } else {
-        document.querySelector(".spanResultado").textContent = resultado;
+        document.querySelector(".spanResultado").innerHTML = resultado;
     }
 }
 function calcular2(operacao) {
@@ -217,9 +217,9 @@ function calcular2(operacao) {
         let hexa = resultado.toString(16).toUpperCase();
         let octal = resultado.toString(8);
         
-        document.querySelector(".spanResultado").textContent = `Resultado: ${resultado} (Decimal), ${binario} (Binário), ${hexa} (Hexadecimal), ${octal} (Octal)`;
+        document.querySelector(".spanResultado").innerHTML = `${resultado} (Decimal)<br> ${binario} (Binário)<br> ${hexa} (Hexadecimal)<br> ${octal} (Octal)`;
     } else {
-        document.querySelector(".spanResultado").textContent = resultado;
+        document.querySelector(".spanResultado").innerHTML = resultado;
     }
 }
 
@@ -282,9 +282,9 @@ function calcular3(operacao) {
         let hexa = resultado.toString(16).toUpperCase();
         let octal = resultado.toString(8);
         
-        document.querySelector(".spanResultado").textContent = `Resultado: ${resultado} (Decimal), ${binario} (Binário), ${hexa} (Hexadecimal), ${octal} (Octal)`;
+        document.querySelector(".spanResultado").innerHTML = `${resultado} (Decimal)<br> ${binario} (Binário)<br> ${hexa} (Hexadecimal)<br> ${octal} (Octal)`;
     } else {
-        document.querySelector(".spanResultado").textContent = resultado;
+        document.querySelector(".spanResultado").innerHTML = resultado;
     }
 }
 function calcular4(operacao) {
@@ -346,8 +346,8 @@ function calcular4(operacao) {
         let hexa = resultado.toString(16).toUpperCase();
         let octal = resultado.toString(8);
         
-        document.querySelector(".spanResultado").textContent = `Resultado: ${resultado} (Decimal), ${binario} (Binário), ${hexa} (Hexadecimal), ${octal} (Octal)`;
+        document.querySelector(".spanResultado").innerHTML = `${resultado} (Decimal)<br> ${binario} (Binário)<br> ${hexa} (Hexadecimal)<br> ${octal} (Octal)`;
     } else {
-        document.querySelector(".spanResultado").textContent = resultado;
+        document.querySelector(".spanResultado").innerHTML = resultado;
     }
 }
